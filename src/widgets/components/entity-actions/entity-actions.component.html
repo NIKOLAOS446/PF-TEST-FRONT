@@ -1,0 +1,8 @@
+<div class="action-bar justify-content-end pt-2">
+  <button ng-if="!$ctrl.entityId" type="button" class="btn btn-success btn-sm"
+    ng-click="$ctrl.onCreate({ event: $event });">Create</button>
+  <button ng-if="!!$ctrl.entityId" type="button" class="btn btn-warning btn-sm"
+    ng-click="$ctrl.onUpdate({ event: $event })">Update</button>
+  <button ng-if="!$ctrl.isMasterDetail" type="button" class="btn btn-danger btn-sm"
+    ng-click="$ctrl.onCancel({ event: $event });">Cancel</button>
+</div>

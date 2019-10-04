@@ -1,0 +1,39 @@
+<h4 class="text-center">EMPLOYEES</h4>
+<div class="action-bar pb-2">
+  <button type="button" class="btn btn-success btn-sm" ng-click="$ctrl.onCreate()">Create</button>
+  <button type="button" class="btn btn-warning btn-sm" ng-click="$ctrl.onEdit({ id: $ctrl.selectedId })">Edit</button>
+  <button type="button" class="btn btn-danger btn-sm" ng-click="$ctrl.onDelete($ctrl.selectedId)">Delete</button>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Ιd</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>DateOfBirth</th>
+        <th>Createdby</th>
+        <th>Updatedby</th>
+        <th>DatetimeCreated</th>
+        <th>Lasttimeupdated</th>
+        <th>DateTimeUpdated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in $ctrl.employeesArray" ngmodel ng-click="$ctrl.selectedId = employee.id"
+        ng-dblclick="$ctrl.select(employee)" ng-class="{ info: employee.id===$ctrl.selectedId}">
+        <td>{{employee.id}}</td>
+        <td>{{employee.firstname}}</td>
+        <td>{{employee.lastname}}</td>
+        <td>{{employee.dateOfBirth}}</td>
+        <td>{{employee.createdBy}}</td>
+        <td>{{employee.updatedBy}}</td>
+        <td>{{employee.dateTimeCreated}}</td>
+        <td>{{employee.lastTimeUpdated}}</td>
+        <td>{{employee.dateTimeUpdated}}</td>
+        
+
+      </tr>
+    </tbody>
+  </table>
+</div>

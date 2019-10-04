@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  
+    <h3 class="text-center">Employee-Department Form</h3>
+    
+  <ng-form name="employee">
+    <div class="form-group">
+      <label for="EmployeeId">Employee</label>
+      <select class="form-control input-sm" ng-model="$ctrl.employeedepartmentrelation.EmployeeId" id="EmployeeId" name="EmployeeId">
+      <option ng-repeat="employee in $ctrl.employeesArray" ng-value="employee.id"> {{employee.firstname}}</option>
+    </select>
+
+    <ng-form name="department">
+      <div class="form-group">
+        <label for="DepartmentId">Department</label>
+        <select class="form-control input-sm" ng-model="$ctrl.employeedepartmentrelation.DepartmentId" id="DepartmentId" name="DepartmentId">
+        <option ng-repeat="department in $ctrl.departmentsArray" ng-value="department.id"> {{department.name}}</option>
+      </select>
+      
+  
+  
+    <div class="form-group">
+      <label for="dateTimeCreated">dateTimeCreated</label>
+      <input type="text" class="form-control input-sm" id="dateTimeCreated" name="dateTimeCreated" placeholder="dateTimeCreated"
+        ng-model="$ctrl.employeedepartmentrelation.dateTimeCreated">
+    </div>
+    <entity-actions entity-id="$ctrl.employeedepartmentrelation.Id" on-create="$ctrl.onCreate(event)" on-update="$ctrl.onUpdate(event)"
+      on-cancel="$ctrl.onCancel(event)">
+    </entity-actions>
+  </ng-form>
+  
+  
+  
+  
+  <div class="row">
+    <button type="button"
+            class="btn btn-info"
+            ng-click="$ctrl.close()">Close</button>
+            
+  </div>
+</div>
